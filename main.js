@@ -35,11 +35,11 @@
   // - 戻り値
   //   - 引数で受け取ったtodoをそのまま返す
   const validateTodo = (todo) => {
-    if(!todo) {
+    if (!todo) {
       throw new Error('何も入力されていません');
     }
 
-    if(todos.some(value => {return value === todo})) {
+    if (todos.some(value => value === todo)) {
       throw new Error('同じ名前のタスクは既に作成されています');
     }
     return todo;
@@ -67,13 +67,15 @@
   // - 戻り値
   //   - 無し
   const showTodos = () => {
-    while(ulElement.firstChild){ulElement.removeChild(ulElement.firstChild)}
+    while (ulElement.firstChild) {
+      ulElement.removeChild(ulElement.firstChild);
+    }
     
     todos.forEach((todo, index) => {
       const newList = document.createElement('li');
-      newList.textContent = `${index+1}: ${todo}`;
+      newList.textContent = `${index + 1}: ${todo}`;
       const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete'
+      deleteBtn.textContent = 'Delete';
       deleteBtn.addEventListener('click', event => {
         promiseTaskOfDeletingTodo(index);
       });
