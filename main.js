@@ -109,11 +109,11 @@
   const promiseTaskOfAddingTodo = () => {
     const resolvePromise = Promise.resolve();
     resolvePromise
-    .then(pickupTodoFromTextBox)
-    .then(validateTodo)
-    .then(addTodo)
-    .then(showTodos)
-    .catch(error => {alert(error.message)});
+      .then(pickupTodoFromTextBox)
+      .then(validateTodo)
+      .then(addTodo)
+      .then(showTodos)
+      .catch(error => {alert(error.message)});
   };
 
   // `promiseTaskOfDeletingTodo関数を実装する`
@@ -131,8 +131,8 @@
   const promiseTaskOfDeletingTodo = (index) => {
     const resolvePromise = Promise.resolve(index);
     resolvePromise
-    .then(deleteTodo)
-    .then(showTodos);
+      .then(deleteTodo)
+      .then(showTodos);
   };
 
   // 追加ボタンをクリックしたら `promiseTaskOfAddingTodo` を実行する
